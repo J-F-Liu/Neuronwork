@@ -2,11 +2,20 @@
 //  main.swift
 //  Neuronwork
 //
-//  Created by Junfeng on 14/12/25.
-//  Copyright (c) 2014年 Junfeng. All rights reserved.
-//
 
-import Foundation
+var neuron = Neuron(inputSize:10, ActivationFunctions.sigmod)
+var input = (1...10).map{n in Real(n)}
+var activation = neuron.activate(input)
+println(activation)
 
-println("Hello, World!")
+var layer = NeuronLayer(neurons: [neuron, neuron])
+var output = layer.activate(input)
+println(output)
 
+var network = NeuronNetwork(layers: [layer, layer])
+output = network.activate(input)
+println(output)
+
+var network2 = NeuronNetwork(layerSizes: [10, 5, 3], ActivationFunctions.sigmod)
+output = network2.activate(input)
+println(output)

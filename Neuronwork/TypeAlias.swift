@@ -1,0 +1,1 @@
+typealias Real = Float // can be changed to Double on 64-bit system
