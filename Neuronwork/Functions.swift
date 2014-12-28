@@ -1,7 +1,7 @@
 import Darwin
 
 func randomFloat() -> Float {
-    return Float(arc4random()) /  Float(UInt32.max)
+    return Float(arc4random()) / Float(UInt32.max)
 }
 
 struct ActivationFunctions {

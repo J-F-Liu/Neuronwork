@@ -9,7 +9,7 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Neuronwork/ActivationFunctions.swift"
+            filePath = "Neuronwork/Functions.swift"
             timestampString = "441300351.942317"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"

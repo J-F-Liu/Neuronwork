@@ -19,3 +19,7 @@ println(output)
 var network2 = NeuronNetwork(layerSizes: [10, 5, 3], ActivationFunctions.sigmod)
 output = network2.activate(input)
 println(output)
+
+var network3 = NeuralNetwork(layerSizes: [10, 5, 3], ActivationFunctions.sigmod)
+output = network3.activate(input)
+println(output)
