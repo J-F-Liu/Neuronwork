@@ -15,6 +15,7 @@
 		E6F51F171A4DA9F80014DBD4 /* NeuronNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F51F161A4DA9F80014DBD4 /* NeuronNetwork.swift */; };
 		E6F51F1B1A4FACD30014DBD4 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F51F1A1A4FACD30014DBD4 /* Matrix.swift */; };
 		E6F51F1D1A4FD04C0014DBD4 /* NeuralNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F51F1C1A4FD04C0014DBD4 /* NeuralNetwork.swift */; };
+		E6F51F1F1A4FEC140014DBD4 /* NeuralNetworkTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F51F1E1A4FEC140014DBD4 /* NeuralNetworkTraining.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +40,7 @@
 		E6F51F161A4DA9F80014DBD4 /* NeuronNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeuronNetwork.swift; sourceTree = "<group>"; };
 		E6F51F1A1A4FACD30014DBD4 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Matrix.swift; sourceTree = "<group>"; };
 		E6F51F1C1A4FD04C0014DBD4 /* NeuralNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeuralNetwork.swift; sourceTree = "<group>"; };
+		E6F51F1E1A4FEC140014DBD4 /* NeuralNetworkTraining.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeuralNetworkTraining.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				E6D39D2C1A4C628400AC7D2A /* main.swift */,
 				E6F51F1A1A4FACD30014DBD4 /* Matrix.swift */,
 				E6F51F1C1A4FD04C0014DBD4 /* NeuralNetwork.swift */,
+				E6F51F1E1A4FEC140014DBD4 /* NeuralNetworkTraining.swift */,
 				E6F51F0E1A4D8B560014DBD4 /* Neuron.swift */,
 				E6F51F141A4DA51E0014DBD4 /* NeuronLayer.swift */,
 				E6F51F161A4DA9F80014DBD4 /* NeuronNetwork.swift */,
@@ -145,6 +148,7 @@
 				E6F51F1B1A4FACD30014DBD4 /* Matrix.swift in Sources */,
 				E6F51F1D1A4FD04C0014DBD4 /* NeuralNetwork.swift in Sources */,
 				E6F51F171A4DA9F80014DBD4 /* NeuronNetwork.swift in Sources */,
+				E6F51F1F1A4FEC140014DBD4 /* NeuralNetworkTraining.swift in Sources */,
 				E6F51F131A4D9A020014DBD4 /* TypeAlias.swift in Sources */,
 				E6D39D2D1A4C628400AC7D2A /* main.swift in Sources */,
 			);

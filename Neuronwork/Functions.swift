@@ -9,3 +9,8 @@ struct ActivationFunctions {
         return 1/(1+Darwin.exp(-x))
     }
 }
+
+func sigmodDerivative(x:Real) -> Real{
+    var s = ActivationFunctions.sigmod(x)
+    return s * (1 - s)
+}

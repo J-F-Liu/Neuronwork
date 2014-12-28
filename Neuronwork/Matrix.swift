@@ -1,4 +1,11 @@
 class Matrix{
+    class func zeros(row:Int, col:Int) -> [[Real]]{
+        var matrix = [[Real]]()
+        for i in 1...row{
+            matrix.append((1...col).map{_ in Real(0)})
+        }
+        return matrix
+    }
     class func random(row:Int, col:Int) -> [[Real]]{
         var matrix = [[Real]]()
         for i in 1...row{
@@ -7,10 +14,26 @@ class Matrix{
         return matrix
     }
     
+    class func mul(factor:Real, vector:[Real]) -> [Real]{
+        return vector.map{item in factor*item}
+    }
+    
+    class func mul(factor:Real, matrix:[[Real]]) -> [[Real]]{
+        return matrix.map{row in self.mul(factor,vector: row)}
+    }
+    
     class func add(v1:[Real], v2:[Real]) -> [Real]{
         var result = [Real]()
         for index in 0..<v1.count{
             result.append(v1[index] + v2[index])
+        }
+        return result
+    }
+    
+    class func add(m1:[[Real]], m2:[[Real]]) -> [[Real]]{
+        var result = [[Real]]()
+        for index in 0..<m1.count{
+            result.append(self.add(m1[index], v2: m2[index]))
         }
         return result
     }
@@ -31,10 +54,23 @@ class Matrix{
         return result
     }
     
+    class func cross(v1:[Real], v2:[Real]) -> [[Real]]{
+        return v1.map{ item in self.mul(item, vector: v2)}
+    }
+    
     class func multiply(matrix:[[Real]], vector:[Real]) -> [Real]{
         var result = [Real]()
         for row in matrix{
             result.append(dot(row, v2: vector))
+        }
+        return result
+    }
+    
+    class func transpose(matrix:[[Real]])->[[Real]]{
+        var result = [[Real]]()
+        var columns = matrix[0].count
+        for col in 0..<columns{
+            result.append(matrix.map{row in row[col]})
         }
         return result
     }
