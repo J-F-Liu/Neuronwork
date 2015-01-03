@@ -24,25 +24,27 @@ extension NeuralNetwork{
             activations.append(activation)
         }
         
+        var layer = weightedInputs.count-1
+        
         var delta = Matrix.product(
-            costDerivative(activations[activations.count-1], expectedOutput: expected),
-            v2: Matrix.apply(weightedInputs[weightedInputs.count-1], sigmodDerivative))
+            costDerivative(activations[layer+1], expectedOutput: expected),
+            v2: Matrix.apply(weightedInputs[layer], sigmodDerivative))
         
         nabla_weight_bias_pairs.insert(
-            (Matrix.cross(delta, v2: activations[activations.count-2]), delta), atIndex: 0)
+            (Matrix.cross(delta, v2: activations[layer]), delta), atIndex: 0)
         
-        var l = 2
+        layer--
         // propagate delta backward
         for (weight, _) in layers.reverse(){
             delta = Matrix.product(
                 Matrix.multiply(Matrix.transpose(weight), vector: delta),
-                v2: Matrix.apply(weightedInputs[weightedInputs.count-l], sigmodDerivative))
+                v2: Matrix.apply(weightedInputs[layer], sigmodDerivative))
             nabla_weight_bias_pairs.insert(
-                (Matrix.cross(delta, v2: activations[activations.count-l-1]), delta), atIndex: 0)
-            if l == weightedInputs.count{
+                (Matrix.cross(delta, v2: activations[layer]), delta), atIndex: 0)
+            if layer == 0{
                 break
             }
-            l++
+            layer--
         }
         
         return nabla_weight_bias_pairs

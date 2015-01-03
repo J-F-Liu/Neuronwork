@@ -9,7 +9,7 @@ class Matrix{
     class func random(row:Int, col:Int) -> [[Real]]{
         var matrix = [[Real]]()
         for i in 1...row{
-            matrix.append((1...col).map{_ in randomFloat()})
+            matrix.append((1...col).map{_ in randomFloat()-0.5})
         }
         return matrix
     }
@@ -81,5 +81,16 @@ class Matrix{
             result.append(function(item))
         }
         return result
+    }
+    
+    class func maxIndex(vector:[Real])->Int{
+        var maxValue = vector[0]
+        var maxIndex = 0
+        for var index = 1; index < vector.count; index++ {
+            if vector[index] > maxValue{
+                maxIndex = index
+            }
+        }
+        return maxIndex
     }
 }
