@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E64A326F1A51A76E00F069A5 /* MnistData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A326E1A51A76E00F069A5 /* MnistData.swift */; };
 		E64A32711A57B1A400F069A5 /* BinaryReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A32701A57B1A300F069A5 /* BinaryReader.swift */; };
+		E64A32731A5AAFD600F069A5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64A32721A5AAFD600F069A5 /* Logger.swift */; };
 		E6D39D2D1A4C628400AC7D2A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6D39D2C1A4C628400AC7D2A /* main.swift */; };
 		E6F51F0F1A4D8B560014DBD4 /* Neuron.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F51F0E1A4D8B560014DBD4 /* Neuron.swift */; };
 		E6F51F111A4D997E0014DBD4 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F51F101A4D997E0014DBD4 /* Functions.swift */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		E64A326E1A51A76E00F069A5 /* MnistData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MnistData.swift; sourceTree = "<group>"; };
 		E64A32701A57B1A300F069A5 /* BinaryReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryReader.swift; sourceTree = "<group>"; };
+		E64A32721A5AAFD600F069A5 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		E6D39D291A4C628400AC7D2A /* Neuronwork */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Neuronwork; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6D39D2C1A4C628400AC7D2A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		E6F51F0E1A4D8B560014DBD4 /* Neuron.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Neuron.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				E6F51F121A4D9A020014DBD4 /* TypeAlias.swift */,
 				E64A326E1A51A76E00F069A5 /* MnistData.swift */,
 				E64A32701A57B1A300F069A5 /* BinaryReader.swift */,
+				E64A32721A5AAFD600F069A5 /* Logger.swift */,
 			);
 			path = Neuronwork;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 				E6F51F1B1A4FACD30014DBD4 /* Matrix.swift in Sources */,
 				E6F51F1D1A4FD04C0014DBD4 /* NeuralNetwork.swift in Sources */,
 				E6F51F171A4DA9F80014DBD4 /* NeuronNetwork.swift in Sources */,
+				E64A32731A5AAFD600F069A5 /* Logger.swift in Sources */,
 				E6F51F1F1A4FEC140014DBD4 /* NeuralNetworkTraining.swift in Sources */,
 				E6F51F131A4D9A020014DBD4 /* TypeAlias.swift in Sources */,
 				E6D39D2D1A4C628400AC7D2A /* main.swift in Sources */,

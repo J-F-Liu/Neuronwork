@@ -1,13 +1,5 @@
 extension NeuralNetwork{
     
-    func costDerivative(activation:[Real], expectedOutput:[Real])->[Real]{
-        var diff = [Real](count:activation.count, repeatedValue:0)
-        for i in 0..<activation.count{
-            diff[i] = activation[i] - expectedOutput[i]
-        }
-        return diff
-    }
-    
     func backPropagation(input:[Real], expected:[Real]) -> [([[Real]],[Real])]{
         var nabla_weight_bias_pairs = [([[Real]],[Real])]()
         var activation = input
@@ -26,9 +18,8 @@ extension NeuralNetwork{
         
         var layer = weightedInputs.count-1
         
-        var delta = Matrix.product(
-            costDerivative(activations[layer+1], expectedOutput: expected),
-            v2: Matrix.apply(weightedInputs[layer], sigmodDerivative))
+        // delta of cross entropy cost
+        var delta = Matrix.sub(activations[layer+1], v2: expected)
         
         nabla_weight_bias_pairs.insert(
             (Matrix.cross(delta, v2: activations[layer]), delta), atIndex: 0)
@@ -50,7 +41,7 @@ extension NeuralNetwork{
         return nabla_weight_bias_pairs
     }
     
-    func train(trainingSet:[([Real],[Real])], eta:Real){
+    func train(trainingSet:[([Real],[Real])], eta:Real, lambda:Real){
         var nabla_weight_bias_pairs = layers.map{(weight, bias) in
             (Matrix.zeros(weight.count, col: weight[0].count), bias.map{_ in Real(0)})}
         for (input, target) in trainingSet{
@@ -67,7 +58,9 @@ extension NeuralNetwork{
             var (weight, bias) = layers[index]
             var (nabla_weight, nabla_bias) = nabla_weight_bias_pairs[index]
             layers[index] = (
-                Matrix.add(weight, m2: Matrix.mul(-eta/batchSize, matrix: nabla_weight)),
+                Matrix.add(
+                    Matrix.mul(1-eta*lambda/batchSize, matrix: weight),
+                    m2: Matrix.mul(-eta/batchSize, matrix: nabla_weight)),
                 Matrix.add(nabla_bias, v2: Matrix.mul(-eta/batchSize, vector: nabla_bias)))
         }
     }

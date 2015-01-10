@@ -30,6 +30,14 @@ class Matrix{
         return result
     }
     
+    class func sub(v1:[Real], v2:[Real])->[Real]{
+        var diff = [Real](count:v1.count, repeatedValue:0)
+        for i in 0..<v1.count{
+            diff[i] = v1[i] - v2[i]
+        }
+        return diff
+    }
+    
     class func add(m1:[[Real]], m2:[[Real]]) -> [[Real]]{
         var result = [[Real]]()
         for index in 0..<m1.count{

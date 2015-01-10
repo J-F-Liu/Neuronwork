@@ -29,11 +29,11 @@ output = xorNetwork.activate([1,1])
 println(output)
 
 for i in 1...100 {
-xorNetwork.train([([0,0],[0]),([0,1],[1]),([1,0],[1]),([1,1],[0])], eta: 4.0)
+    xorNetwork.train([([0,0],[0]),([0,1],[1]),([1,0],[1]),([1,1],[0])], eta: 4.0, lambda:0)
 }
 println(xorNetwork.activate([0,0]))
 println(xorNetwork.activate([0,1]))
 println(xorNetwork.activate([1,0]))
 println(xorNetwork.activate([1,1]))
 
-MnistData.train("/Users/Junfeng/Documents/SourceCode/", epochs: 2, miniBatchSize: 10, eta: 3.0)
+MnistData.train("/Users/Junfeng/Documents/SourceCode/", epochs: 2, miniBatchSize: 10, eta: 3.0, lambda: 5.0)
